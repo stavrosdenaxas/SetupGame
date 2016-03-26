@@ -2,6 +2,7 @@ package com.mygdx.game;
 
 
 import com.badlogic.gdx.Game;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.mygdx.game.Screens.SplashScreen;
 
@@ -14,10 +15,7 @@ public class MyGdxGame extends Game {
 
 	@Override
 	public void create() {
-
 		batch = new SpriteBatch();
-
-
 		setScreen(new SplashScreen(this));
 
 	}

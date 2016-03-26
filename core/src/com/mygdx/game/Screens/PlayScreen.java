@@ -30,7 +30,7 @@ public class PlayScreen implements Screen {
         gamecam = new OrthographicCamera();
         gamePort = new FitViewport(MyGdxGame.V_WIDTH, MyGdxGame.V_HEIGHT, gamecam);
         hud = new Hud(game.batch);
-
+        System.out.println("This is the PlayScreen");
     }
 
 
@@ -50,7 +50,7 @@ public class PlayScreen implements Screen {
         game.batch.draw(texture, 0, 0);
         game.batch.end();
 
-        //game.batch.setProjectionMatrix(hud.stage.getCamera().combined);
+        game.batch.setProjectionMatrix(hud.stage.getCamera().combined);
         hud.stage.draw();
 
 

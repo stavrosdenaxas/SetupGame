@@ -6,12 +6,11 @@ import com.mygdx.game.MyGdxGame;
 /**
  * Created by ET on 3/26/2016.
  */
-public class MenuScreen implements Screen {
-    private MyGdxGame game;
+public class OptionsScreen implements Screen {
 
-    public MenuScreen(MyGdxGame game){
-        this.game = game;
-        System.out.println("This is the MenuScreen");
+
+
+    public OptionsScreen(MyGdxGame game)   {
     }
 
     @Override
