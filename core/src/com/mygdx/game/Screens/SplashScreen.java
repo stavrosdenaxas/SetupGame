@@ -29,7 +29,6 @@ public class SplashScreen implements Screen{
         gamecam = new OrthographicCamera();
         gamePort = new FitViewport(MyGdxGame.V_WIDTH, MyGdxGame.V_HEIGHT, gamecam);
         System.out.println("This is the SplashScreen");
-        System.out.println(Gdx.graphics.getFramesPerSecond());
 
     }
 
@@ -49,7 +48,6 @@ public class SplashScreen implements Screen{
         game.batch.begin();
         game.batch.draw(texture, 140, 300);
         game.batch.end();
-        System.out.println(Gdx.graphics.getDeltaTime());
         if (TimeUtils.millis()>(startTime+5000)) game.setScreen(new TitleScreen(game));
     }
 

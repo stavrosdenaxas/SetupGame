@@ -6,7 +6,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 
-import com.badlogic.gdx.utils.viewport.StretchViewport;
+import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.MyGdxGame;
 
@@ -25,7 +25,7 @@ public class TitleScreen implements Screen {
         this.game = game;
         gamecam = new OrthographicCamera();
         title = new Texture("title.png");
-        gamePort = new StretchViewport(MyGdxGame.V_WIDTH, MyGdxGame.V_HEIGHT, gamecam);
+        gamePort = new FitViewport(MyGdxGame.V_WIDTH, MyGdxGame.V_HEIGHT, gamecam);
         System.out.println("This is the TitleScreen");
 
     }
@@ -42,8 +42,8 @@ public class TitleScreen implements Screen {
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         game.batch.begin();
-        game.batch.draw(title, 0, 0, 100, 100);
-        game.batch.draw(title, MyGdxGame.V_HEIGHT / 2,MyGdxGame.V_WIDTH /2, MyGdxGame.V_HEIGHT / 3, MyGdxGame.V_WIDTH /3 );
+
+        game.batch.draw(title, MyGdxGame.V_WIDTH / 5,MyGdxGame.V_HEIGHT / 3 );
         game.batch.end();
 
         if (Gdx.input.isTouched()) {
