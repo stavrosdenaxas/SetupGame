@@ -1,6 +1,5 @@
 package com.mygdx.game.Screens;
 
-import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
@@ -9,7 +8,6 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.MyGdxGame;
-import com.mygdx.game.Scenes.Hud;
 
 
 /**
@@ -21,7 +19,6 @@ public class PlayScreen implements Screen {
     Texture texture;
     private OrthographicCamera gamecam;
     private Viewport gamePort;
-    Hud hud;
 
     public PlayScreen (MyGdxGame game) {
 
@@ -29,7 +26,7 @@ public class PlayScreen implements Screen {
         texture = new Texture("test.png");
         gamecam = new OrthographicCamera();
         gamePort = new FitViewport(MyGdxGame.V_WIDTH, MyGdxGame.V_HEIGHT, gamecam);
-        hud = new Hud(game.batch);
+
         System.out.println("This is the PlayScreen");
     }
 
@@ -41,17 +38,16 @@ public class PlayScreen implements Screen {
 
     @Override
     public void render(float delta) {
-        Gdx.gl.glClearColor(0, 0, 0, 1);
-        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
 
+        //renders all graphics
+        renderGame();
 
-        game.batch.begin();
-        game.batch.draw(texture, 0, 0);
-        game.batch.end();
+        //logic of location of sprites
+        gameLogic();
 
-        game.batch.setProjectionMatrix(hud.stage.getCamera().combined);
-        hud.stage.draw();
+        //handles user input
+        inputLogic();
 
 
     }
@@ -82,4 +78,31 @@ public class PlayScreen implements Screen {
     public void dispose() {
 
     }
+    public void renderGame(){
+        Gdx.gl.glClearColor(0, 0, 0, 1);
+        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+
+
+
+        game.batch.begin();
+        game.batch.draw(texture, 0, 0);
+
+
+
+        game.batch.end();
+
+    }
+    public void gameLogic(){
+
+
+
+
+    }
+
+    public void inputLogic(){
+
+
+    }
+
+
 }
